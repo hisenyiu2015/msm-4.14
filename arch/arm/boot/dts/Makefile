@@ -658,6 +658,7 @@ dtb-$(CONFIG_SOC_IMX6SLL) += \
 	imx6sll-evk-reva.dtb \
 	imx6sll-evk-btwifi.dtb
 dtb-$(CONFIG_SOC_IMX6SX) += \
+	imx6sx-x6med35-pdk.dtb \
 	imx6sx-nitrogen6sx.dtb \
 	imx6sx-nitrogen6sx-m4.dtb \
 	imx6sx-nitrogen6_scm.dtb \
