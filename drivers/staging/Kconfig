@@ -131,3 +131,4 @@ source "drivers/staging/fsl_qbman/Kconfig"
 source "drivers/staging/fsl_ppfe/Kconfig"
 
 endif # STAGING
+source "drivers/staging/qcacld-2.0/Kconfig"

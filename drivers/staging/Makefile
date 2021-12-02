@@ -56,3 +56,4 @@ obj-$(CONFIG_EXFAT_FS)		+= exfat/
 obj-$(CONFIG_QLGE)		+= qlge/
 obj-$(CONFIG_FSL_SDK_DPA)      += fsl_qbman/
 obj-$(CONFIG_FSL_PPFE)		+= fsl_ppfe/
+obj-$(CONFIG_QCA_CLD_WLAN)	+= qcacld-2.0/
