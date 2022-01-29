@@ -163,6 +163,15 @@ parts:
         prime:
              - -*
 
+    optee-uc-fde:
+        plugin: dump
+        source: https://git.launchpad.net/~ondrak/+git/optee-uc-fde
+        source-type: git
+        organize:
+            '*': optee-uc-fde/
+        prime:
+            - -*
+
     optee-os:
         after:
             - optee-uc-fde
