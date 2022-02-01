@@ -35,9 +35,15 @@ parts:
       - atl1c
       - phy-qcom-qusb2
     override-build: |
+      git clone --depth=1 https://github.com/openzfs/zfs ${SNAPCRAFT_PART_BUILD}/zfs -b master
       snapcraftctl build
       kernel_version="$(git --git-dir=${SNAPCRAFT_PART_SRC}/.git describe --tags  | cut -c 14-)"
       snapcraftctl set-version ${kernel_version}
+      cd ${SNAPCRAFT_PART_BUILD}/zfs
+      ./autogen.sh
+      ./configure --with-linux= ${SNAPCRAFT_PART_SRC} --with-linux-obj=${SNAPCRAFT_PART_BUILD} --with-config=kernel
+      make -j$(nproc)
+      make install DESTDIR=${SNAPCRAFT_PART_INSTALL}
     stage:
       - dtbs
       - System.map-*
@@ -128,3 +134,4 @@ build-packages:
     - wget
     - gcc-aarch64-linux-gnu
     - libjson-c-dev:arm64
+    - libblkid-dev
